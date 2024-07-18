@@ -30,14 +30,14 @@ namespace WebScrape.Business
             this.rankValueRetrieve = rankValueRetrieve;
         }
 
-        public async Task<SearchResult> Execute(AddSearchCommand request, CancellationToken cancellationToken)
+        public async Task<RankDBResult> Execute(SearchEngineType SearchEngine, string KeyWord, string TargetURL, CancellationToken cancellationToken)
         {
-            int rankResult = await rankValueRetrieve.Get(request);
+            int rankResult = await rankValueRetrieve.Get(SearchEngine, KeyWord, TargetURL, cancellationToken);
             Search newItem = new()
             {
-                SearchEngine = request.SearchEngine,
-                KeyWord = request.KeyWord,
-                TargetURL = request.TargetURL
+                SearchEngine = SearchEngine,
+                KeyWord = KeyWord,
+                TargetURL = TargetURL
             };
             // check if the same search exists
             var existItem = await searchRepository.Get(newItem);
@@ -62,9 +62,9 @@ namespace WebScrape.Business
 
             await searchRepository.Save(cancellationToken);
 
-            return new SearchResult
+            return new RankDBResult
             {
-                Ranking = rankResult == -1 ? rankResult : rankResult + 1,
+                Rank = rankResult == -1 ? rankResult : rankResult + 1,
                 Count = existItem == null ? 1 : existItem.SearchCount
             };
         }

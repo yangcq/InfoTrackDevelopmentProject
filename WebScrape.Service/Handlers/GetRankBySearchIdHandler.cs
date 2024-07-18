@@ -11,20 +11,20 @@ using WebScrape.Data.Repository;
 
 namespace WebScrape.Service.Handlers
 {
-    public class GetRankingBySearchIdHandler : IRequestHandler<GetRankingByIdQuery, RankingResult>
+    public class GetRankBySearchIdHandler : IRequestHandler<GetRankByIdQuery, RankListResult>
     {
         private readonly IRepository<Search> repository;
-        public GetRankingBySearchIdHandler(IRepository<Search> repository)
+        public GetRankBySearchIdHandler(IRepository<Search> repository)
         {
             this.repository = repository;
         }
 
-        public async Task<RankingResult> Handle(GetRankingByIdQuery request, CancellationToken cancellationToken)
+        public async Task<RankListResult> Handle(GetRankByIdQuery request, CancellationToken cancellationToken)
         {
             var list = await repository.GetByID(request.SearchID, cancellationToken);
             if (list == null)
-                return new RankingResult();
-            return new RankingResult()
+                return new RankListResult();
+            return new RankListResult()
             {
                 Rankings = list.Rankings
                 .Select(x => new { V = x.Created.ToString("yyyy-MM-dd HH:mm"), x.Rank })

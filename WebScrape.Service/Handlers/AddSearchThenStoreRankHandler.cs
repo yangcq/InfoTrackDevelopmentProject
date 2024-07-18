@@ -8,18 +8,18 @@ using WebScrape.Service.Abstraction;
 
 namespace WebScrape.Service.Handlers
 {
-    public class AddSearchHandler : IRequestHandler<AddSearchCommand, SearchResult>
+    public class AddSearchThenStoreRankHandler : IRequestHandler<AddRankDBCommand, RankDBResult>
     {
         private readonly IWebScrapeSearchLogic webScrapeSearchLogic;
 
-        public AddSearchHandler(IWebScrapeSearchLogic webScrapeSearchLogic)
+        public AddSearchThenStoreRankHandler(IWebScrapeSearchLogic webScrapeSearchLogic)
         {
             this.webScrapeSearchLogic = webScrapeSearchLogic;
         }
 
-        public async Task<SearchResult> Handle(AddSearchCommand request, CancellationToken cancellationToken)
+        public async Task<RankDBResult> Handle(AddRankDBCommand request, CancellationToken cancellationToken)
         {
-            return await webScrapeSearchLogic.Execute(request, cancellationToken);
+            return await webScrapeSearchLogic.Execute(request.SearchEngine, request.KeyWord, request.TargetURL, cancellationToken);
         }
     }
 }

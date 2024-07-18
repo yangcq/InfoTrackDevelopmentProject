@@ -3,7 +3,7 @@ using WebScrape.Service.Commands;
 
 namespace WebScrape.Service.Validator
 {
-    public class AddSearchValidator : AbstractValidator<AddSearchCommand>
+    public class AddSearchValidator : AbstractValidator<AddRankDBCommand>
     {
         public AddSearchValidator()
         {

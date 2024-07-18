@@ -67,7 +67,7 @@ createApp({
                     if (data.ranking <= 0)
                         this.status_Message = 'no relevant information found, and this seach has been done: ' + data.count + ' times in total';
                     else
-                        this.status_Message = 'this search ranks: ' + data.ranking + 'th, and has been done: ' + data.count + ' times in total';
+                        this.status_Message = 'we got it RANK: # ' + data.rank + ', and this seach has been done: ' + data.count + ' times in total';
                     return fetch(encodeURI(API_Host + 'Ranking?SearchEngine=' + this.userInput.searchEngine + '&KeyWord=' + this.userInput.keyWord + '&TargetURL=' + this.userInput.targetURL));
                 })
                 .then(function (response) {

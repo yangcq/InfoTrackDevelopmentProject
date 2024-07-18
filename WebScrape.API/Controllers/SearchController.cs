@@ -20,8 +20,14 @@ namespace WebScrape.API.Controllers
             return await Send(new GetUsagesQuery()).Process(x => new JsonResult(x));
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Get([FromQuery] GetRankQuery getRankQuery)
+        {
+            return await Send(getRankQuery).Process(x => new JsonResult(x));
+        }
+
         [HttpPost]
-        public async Task<IActionResult> Post(AddSearchCommand addSearchCommand)
+        public async Task<IActionResult> Post(AddRankDBCommand addSearchCommand)
         {
             return await Send(addSearchCommand).Process(x => new JsonResult(x));
         }

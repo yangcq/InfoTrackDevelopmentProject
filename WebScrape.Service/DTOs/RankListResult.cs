@@ -2,7 +2,7 @@
 
 namespace WebScrape.Service.DTOs
 {
-    public class RankingResult : BaseResult
+    public class RankListResult : BaseResult
     {
         public List<KeyValuePair<string, int>>? Rankings { get; set; }
     }

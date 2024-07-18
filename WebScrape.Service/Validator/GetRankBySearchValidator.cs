@@ -8,9 +8,9 @@ using WebScrape.Service.Queries;
 
 namespace WebScrape.Service.Validator
 {
-    public class GetHistoryBySearchValidator : AbstractValidator<GetRankingBySearchQuery>
+    public class GetRankBySearchValidator : AbstractValidator<GetRankBySearchQuery>
     {
-        public GetHistoryBySearchValidator()
+        public GetRankBySearchValidator()
         {
             RuleFor(s => s.KeyWord).NotEmpty().WithMessage("KeyWord is empty");
             RuleFor(s => s.TargetURL).NotEmpty().WithMessage("TargetURL is empty");

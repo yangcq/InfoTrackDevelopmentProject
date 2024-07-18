@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SearchEngine.Library;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,6 @@ namespace WebScrape.Service.Abstraction
 {
     public interface IRankValueRetrieve
     {
-        public Task<int> Get(AddSearchCommand command);
+        public Task<int> Get(SearchEngineType SearchEngine, string KeyWord, string TargetURL, CancellationToken cancellationToken);
     }
 }

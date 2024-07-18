@@ -3,5 +3,5 @@ using WebScrape.Service.DTOs;
 
 namespace WebScrape.Service.Queries
 {
-    public record GetRankingByIdQuery(int SearchID) : IRequest<RankingResult>;
+    public record GetRankByIdQuery(int SearchID) : IRequest<RankListResult>;
 }

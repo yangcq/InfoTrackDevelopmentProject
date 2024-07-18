@@ -12,10 +12,9 @@ namespace WebScrape.Business
 {
     public class WebScrapeRankRetrieve : IRankValueRetrieve
     {
-        public async Task<int> Get(AddSearchCommand command)
+        public async Task<int> Get(SearchEngineType SearchEngine, string KeyWord, string TargetURL, CancellationToken cancellationToken)
         {
-            return await SearchEngineFactory.GetSearchEngine(command.SearchEngine).
-                GetRank(command.KeyWord, command.TargetURL);
+            return await SearchEngineFactory.GetSearchEngine(SearchEngine).GetRank(KeyWord, TargetURL);
         }
     }
 }

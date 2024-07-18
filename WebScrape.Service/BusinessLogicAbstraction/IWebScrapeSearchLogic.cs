@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using SearchEngine.Library;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,6 @@ namespace WebScrape.Service.Abstraction
 {
     public interface IWebScrapeSearchLogic
     {
-        public Task<SearchResult> Execute(AddSearchCommand request, CancellationToken cancellationToken);
+        public Task<RankDBResult> Execute(SearchEngineType SearchEngine, string KeyWord, string TargetURL, CancellationToken cancellationToken);
     }
 }

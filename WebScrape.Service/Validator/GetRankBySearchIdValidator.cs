@@ -8,9 +8,9 @@ using WebScrape.Service.Queries;
 
 namespace WebScrape.Service.Validator
 {
-    public class GetRankingBySearchIdValidator : AbstractValidator<GetRankingByIdQuery>
+    public class GetRankBySearchIdValidator : AbstractValidator<GetRankByIdQuery>
     {
-        public GetRankingBySearchIdValidator()
+        public GetRankBySearchIdValidator()
         {
             RuleFor(x => x.SearchID).NotEmpty().WithMessage("SearchID is empty");
             RuleFor(x => x.SearchID).GreaterThan(0).WithMessage("SearchID is wrong");
