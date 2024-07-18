@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center" id="app">
+    <br>
+    <br>
+    <h1 class="display-4">Hello Team, CQ here!</h1>
+    <br>
+    <br>
+    <form class="container" id="basic-form">
+        <div class="row align-items-center">
+            <div class="col-lg-2">
+                <select v-model="userInput.searchEngine" :disabled="status_Loading" class="form-control">
+                    <option v-for="option in engineList" :value="option.value">
+                        {{ option.text }}
+                    </option>
+                </select>
+            </div>
+            <div class="col-lg-3">
+                <input v-model="userInput.keyWord" :disabled="status_Loading" type="text" class="form-control" placeholder="text to search" required>
+            </div>
+            <div class="col-lg-3">
+                <input v-model="userInput.targetURL" :disabled="status_Loading" type="url" class="form-control" placeholder="url that I interested" value="www.infotrack.co.uk" required>
+            </div>
+            <div class="col-lg-4">
+                <button v-on:click="DoSearch()" :disabled="status_Loading" class="form-control btn btn-primary mb-2">Search</button>
+            </div>
+        </div>
+        <br>
+        <div v-show="!status_Loading" class="alert alert-primary" role="alert">
+            {{status_Message}}
+        </div>
+        <div v-show="status_Loading" class="loader"></div>
+        <br>
+        <br>
+    </form>
+
+    <div class="container">
+        <div>
+            <canvas id="myChart" width="600" height="200"></canvas>
+        </div>
+    </div>
+
+</div>
