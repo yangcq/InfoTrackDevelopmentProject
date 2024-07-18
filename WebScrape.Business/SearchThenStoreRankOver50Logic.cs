@@ -10,11 +10,11 @@ using WebScrape.Service.DTOs;
 
 namespace WebScrape.Business
 {
-    public class SearchOnlyLogic : IWebScrapeSearchLogic
+    public class SearchThenStoreRankOver50Logic : IWebScrapeSearchLogic
     {
         public Task<RankDBResult> Execute(SearchEngineType SearchEngine, string KeyWord, string TargetURL, CancellationToken cancellationToken)
         {
-            //TODO: for standard applications where database is not required
+            //TODO: only note down rank value over 50?
             throw new NotImplementedException();
         }
     }
