@@ -1,6 +1,6 @@
 # InfoTrackDevelopmentProject
 
-First of all I would like to thank infotrack for giving me this opportunity to showcase my skills, going to have my two sleepless nights back.
+First of all I would like to thank infotrack for giving me this opportunity to showcase my skills, I am gonna have my two sleepless nights back.
 
 ## ConnectionStrings
 1. first set **WebScrape.Data** as start up project
@@ -10,8 +10,8 @@ First of all I would like to thank infotrack for giving me this opportunity to s
     in project **WebScrape.API** appsettings.json
 
 ## WebScrape.API
-1. API-First approach: link between the data service and business
-2. the 2 most important abstraction in this project, which helps decouple data flow from business logic
+1. API-First approach: bridge between the data service and business
+2. the following 2 are the most important abstraction in this project, which helps decouple data flow from business logic
     ```csharp
     builder.Services.AddScoped(typeof(IRankValueRetrieve), typeof(WebScrapeRankRetrieve));
     builder.Services.AddScoped(typeof(IWebScrapeSearchLogic), typeof(SearchThenStoreRankLogic));
@@ -36,20 +36,20 @@ First of all I would like to thank infotrack for giving me this opportunity to s
     cfg.AddOpenBehavior(typeof(ValidationBehavior<,>));
     ```
 ## SearchEngine.Library
-1. feels to me too much business logic in it so made it into a standard class library
+1. looks too much business logic in it to me so made it into a standard class library
 2. Factory method pattern with
 3. 2 dependency injection (data & parse)
 
 ## WebScrape.Web
-1. need change the port 7167 if not avaliable 
+1. need to change the port 7167 if not avaliable 
     ```javascript
     const { createApp } = Vue;
     const API_Host = 'https://localhost:7167/';
     ```
-2. lightweight, not really need the razor pages capability
+2. lightweight, don't really need the razor pages capability
 3. Vue,bootstrap grid layout SPA
 4. JavaScript fetch() promise pattern
-5. with help of Chart.js, I manager to show Trends / History as a diagram
+5. with help of Chart.js, I manage to show Trends / History as a diagram
 6. I believe UI design should be minimalistic and focus on delivering data to the user without requiring too much navigation.
 7. With this in mind, the UI consists of only one button but provides maximum data output.
 
@@ -64,4 +64,4 @@ First of all I would like to thank infotrack for giving me this opportunity to s
             return Convert.ToBase64String(algorithm.ComputeHash(Encoding.UTF8.GetBytes(SearchEngine + KeyWord + TargetURL)));
     }
     ```
-3. with this the Trends / History in the UI diagram is all related to the search you just made, much more meaningful than list of random searches.
+3. with this design, the Trends / History in the UI diagram are all related to the search you just made, therefore much more meaningful than a list of random searches.
