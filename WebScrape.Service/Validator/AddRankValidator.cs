@@ -3,9 +3,9 @@ using WebScrape.Service.Commands;
 
 namespace WebScrape.Service.Validator
 {
-    public class AddSearchValidator : AbstractValidator<AddRankDBCommand>
+    public class AddRankValidator : AbstractValidator<AddRankCommand>
     {
-        public AddSearchValidator()
+        public AddRankValidator()
         {
             RuleFor(s => s.KeyWord).NotEmpty().WithMessage("KeyWord is empty");
             RuleFor(s => s.TargetURL).NotEmpty().WithMessage("TargetURL is empty");

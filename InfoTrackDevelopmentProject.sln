@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebScrape.API", "WebScrape.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebScrape.Web", "WebScrape.Web\WebScrape.Web.csproj", "{45FFEB62-4C77-4963-9363-2E7016E5B4BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebScrape.Business", "WebScrape.Business\WebScrape.Business.csproj", "{33DF4D86-24BC-4AA5-AF82-11DF7A4BB5EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebScrape.Business", "WebScrape.Business\WebScrape.Business.csproj", "{33DF4D86-24BC-4AA5-AF82-11DF7A4BB5EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebScrape.Service.Test", "WebScrape.Service.Test\WebScrape.Service.Test.csproj", "{2D306F80-353F-4092-BF78-54EAC4F7DACF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{33DF4D86-24BC-4AA5-AF82-11DF7A4BB5EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33DF4D86-24BC-4AA5-AF82-11DF7A4BB5EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33DF4D86-24BC-4AA5-AF82-11DF7A4BB5EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D306F80-353F-4092-BF78-54EAC4F7DACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D306F80-353F-4092-BF78-54EAC4F7DACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D306F80-353F-4092-BF78-54EAC4F7DACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D306F80-353F-4092-BF78-54EAC4F7DACF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

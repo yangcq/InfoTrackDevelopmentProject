@@ -27,7 +27,7 @@ namespace WebScrape.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(AddRankDBCommand addSearchCommand)
+        public async Task<IActionResult> Post(AddRankCommand addSearchCommand)
         {
             return await Send(addSearchCommand).Process(x => new JsonResult(x));
         }
