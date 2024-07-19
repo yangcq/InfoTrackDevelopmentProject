@@ -12,8 +12,8 @@ createApp({
         return {
             engineList: [
                 { text: 'Google', value: 0 },
-                { text: 'Bing', value: 1 },
-                { text: 'Yahoo', value: 2 }],
+                { text: 'Bing', value: 1 }
+            ],
             status_Loading: false,
             status_Message: '',
             userInput: {
