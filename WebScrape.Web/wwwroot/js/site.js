@@ -64,10 +64,10 @@ createApp({
                     return response.json();
                 })
                 .then(data => {
-                    if (data.ranking <= 0)
-                        this.status_Message = 'no relevant information found, and this seach has been done: ' + data.count + ' times in total';
+                    if (data.rank <= 0)
+                        this.status_Message = 'no relevant information found, and this seach has been done: ' + data.count + ' times';
                     else
-                        this.status_Message = 'we got it RANK: # ' + data.rank + ', and this seach has been done: ' + data.count + ' times in total';
+                        this.status_Message = 'we got it, RANK: # ' + data.rank + ' , and this seach has been done: ' + data.count + ' times';
                     return fetch(encodeURI(API_Host + 'Rank?SearchEngine=' + this.userInput.searchEngine + '&KeyWord=' + this.userInput.keyWord + '&TargetURL=' + this.userInput.targetURL));
                 })
                 .then(function (response) {
